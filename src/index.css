@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-primary: #DC2626; /* primary red */
+  --color-primary-dark: #991B1B;
+  --color-app-bg: #F9FAFB;
+  --color-text-main: #1F2937;
+  --color-text-dim: #6B7280;
+  --color-border-subtle: #E5E7EB;
+  --shadow-subtle: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-app-bg text-text-main;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-5 rounded-lg transition-all duration-200 shadow-sm active:scale-95 disabled:opacity-50;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl border border-border-subtle shadow-subtle overflow-hidden;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-2.5 bg-white border border-border-subtle rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm;
+  }
+
+  .nav-item-base {
+    @apply flex items-center px-4 py-3 rounded-xl transition-all font-medium text-sm text-text-dim;
+  }
+
+  .nav-item-active {
+    @apply bg-[rgba(220,38,38,0.08)] text-primary;
+  }
+
+  .badge-base {
+    @apply px-2.5 py-1 rounded-md text-[11px] font-bold uppercase tracking-wider;
+  }
+}
